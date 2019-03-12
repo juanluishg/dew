@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejemplo</title>
+</head>
+<body>
+    <h1>Ejercicio HTML</h1>
+    <ol>
+        <li>El logo de la UPV <img src="https://www.upv.es/imagenes/marcaUPV_home61.png" alt="logo"/> se encuentra en <code>https://www.upv.com/imagenes/marcaUPV_home61.png</code></li>
+        <li>Este <a href="https://www.upv.es/imagenes/marcaUPV_home61.png">enlace</a> apunta al mismo destino</li>
+        <li><form method="POST" action="http://memex.dsic.upv.es/cgi-bin/printenv.p1">
+            Y el formulario que va a continuaci&oacute;n<br/>
+            <input type="submit" value="printenv"/><br/>
+            Invoca por POST a <code>http://memex.dsic.upv.es/cgi-bin/printenv.p1</code>
+        </form></li>
+    </ol>
+
+    <h1>Formulario</h1>
+    <form method="GET" action="http://a.b.c/hacer" onsubmit="return checkFields(this)">
+        <p>escrito <input type="text"/></p>
+        <p>seleccionado <select name="seleccionado" multiple="multiple">
+            <option value="uno">uno</option>
+            <option value="dos">dos</option>
+            <option value="tres">tres</option>
+            <option value="cuatro">cuatro</option>
+        </select></p>
+        <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>
