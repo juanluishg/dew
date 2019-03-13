@@ -13,24 +13,24 @@
       <fieldset><legend>Datos del producto</legend>
 
       <label for="codigo">C&oacute;digo
-      </label> <input class="textbox" name="codigo" id="codigo" type="text" />
+      </label> <input class="textbox" name="codigo" id="codigo" type="text"  required minlength="1"/>
       <label for="precio">Precio por unidad <span class="small">Proporciona un valor num&eacute;rico</span>
-      </label> <input class="textbox" name="precio" id="precio" type="text" />
+      </label> <input class="textbox" name="precio" id="precio" type="text" required pattern="[0-9]*" minlength="1" />
 
       </fieldset>
       <fieldset><legend>Datos del cliente</legend>
 
       <label for="dni">DNI<span class="small">8 d&iacute;gitos, sin la letra</span>
-      </label> <input class="textbox" name="dni" id="dni" type="text" />
+      </label> <input class="textbox" name="dni" id="dni" type="text" required minlength="1" maxlength="10"/>
       <label for="nombre">Apellidos, Nombre<span class="small">Separados por una coma</span>
-      </label> <input class="textbox" name="nombre" id="nombre" type="text" />
+      </label> <input class="textbox" name="nombre" id="nombre" type="text" required minlength="1"/>
       <label for="email">Correo electr&oacute;nico<span class="small">No olvides la @</span>
-      </label> <input class="textbox" name="email" id="email" type="text" />
+      </label> <input class="textbox" name="email" id="email" type="text" required minlength="1"/>
       <label for="direccion">Direcci&oacute;n  de env&iacute;o
-      </label> <textarea class="textbox" name="direccion" id="direccion" rows="3" cols="40"></textarea>
+      </label> <textarea class="textbox" name="direccion" id="direccion" rows="3" cols="40" required minlength="1"></textarea>
 
       <label for="select">Departamentos visitados <span class="small">Selecciona al menos uno</span>
-      </label> <select class="textbox" name="select" id="select" size="3" multiple="multiple">
+      </label> <select class="textbox" name="select" id="select" size="3" multiple="multiple" required min="1">
         <option value="Alimentacion">Alimentaci&oacute;n</option>
         <option value="Muebles">Muebles</option>
         <option value="Musica">M&uacute;sica</option>
@@ -52,10 +52,10 @@
 
 
       <label for="numTarj1">N&uacute;mero de tarjeta<span class="small">12 d&iacute;gitos</span>
-      </label> <input class="textbox" name="numTarj1" id="numTarj1" type="password">
+      </label> <input class="textbox" name="numTarj1" id="numTarj1" type="password" required minlength="12" required maxlength="12">
 
       <label for="numTarj2">Repite el n&uacute;mero<span class="small">12 d&iacute;gitos</span>
-      </label> <input class="textbox" name="numTarj2" id="numTarj2" type="password">
+      </label> <input class="textbox" name="numTarj2" id="numTarj2" type="password" required minlength="1" required maxlength="12">
 
       </fieldset>
       <button type="submit">Enviar Orden</button>
