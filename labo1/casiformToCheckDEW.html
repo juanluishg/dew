@@ -4,76 +4,12 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>Formulario a comprobar</title>
   <link rel="stylesheet" href="tsr.css" />
-  <script type="text/javascript">
-  function comprobaciones(f){
-	  //Generar letra NIF
-	  var dni = f.dni.value;
-	  var mensaje = ""; 
-	  if(f.codigo.value=="")  mensaje +=  "Codigo no puede estar vacio.\n";
-
-	  if(f.precio.value=="")  mensaje+=  "Precio no puede estar vacio.\n";
-    else{
-      esEntero(precio.value) ? "" : "Formato de precio invalido"
-    }
-
-	  if(f.dni.value=="")  mensaje+=  "El NIF no puede estar vacio.\n";
-    else{
-      if((dni.length != 10) || !(esEntero(dni.substr(0,8)))) mensaje+="El NIF no se corresponde con el formato esperado 8 digitos, separador y letra.\n";
-      else{
-	      letras="TRWAGMYFPDXBNJZSQVHLCKET";
-	      var u = letras[dni.substr(0,8) % 23];
-	      if(!dni.endsWith(u)) mensaje+="La letra del NIF no coincide (deberia ser "+u+")\n";
-      }
-    }
-
-	  if(f.nombre.value=="")  mensaje+= "Nombre no puede estar vacio.\n";
-    else{
-      f.nombre.indexOf(",") ? "" : mensaje+= "Falta simbolo , en el nombre.\n"
-    }
-
-	  if(f.email.value=="")  mensaje+= "Email no puede estar vacio.\n";
-    else{
-      f.email.value.indexOf("@") ? "" :  mensaje+= "Falta simbolo @ en el mail.\n"
-    }
-
-	  if(f.direccion.value=="")  mensaje+=  "Direccion no puede estar vacio.\n";
-
-		if(f.select.value=="")  mensaje+= "Elige un departamento.\n";
-
-    if(f.tarjeta.value=="") mensaje+= "Seleccione el tipo de tarjeta.\n"
-
-    if(f.numTarj1.value=="" || f.numTarj2.value=="") mensaje+= "Numero de tarjeta no puede estar vacio.\n"
-    else{
-      f.numTarj1.value==f.numTarj2.value ? "" : mensaje+= "El numero de tarjeta no coincide.\n";
-      if(!esEntero(f.numTarj1.value) || f.numTarj1.value.length!=12 || f.numTarj1.value.startsWith('0')) mensaje+= "Formato de tarjeta incorrecto.\n";
-    }
-
-    if(mensaje != "") {
-			alert(mensaje);
-			return false;	 
-		}
-			  
-	//Fecha automatica
-	  f.fecha.value = new Date();
-	  var fecha = new Date();
-	  alert("Todo OK!");
-	  return true; 
-  }
-
-  function esEntero(txt){
-	  try{
-		  return parseInt(txt);
-	  }catch(error){
-		  console.log("no es un numero");
-	  }
-  }
-  </script>
 </head>
 <body>
 
   <div id="tsrStyle" class="tsrForm">
     <h1>Formulario a comprobar</h1>
-    <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" id="clientForm" method="post" onsubmit="return comprobaciones(this);">
+    <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" id="clientForm" method="post" >
       <fieldset><legend>Datos del producto</legend>
 
       <label for="codigo">C&oacute;digo
@@ -120,10 +56,9 @@
 
       <label for="numTarj2">Repite el n&uacute;mero<span class="small">12 d&iacute;gitos</span>
       </label> <input class="textbox" name="numTarj2" id="numTarj2" type="password">
-	  <input type="hidden" name="fecha" value="">
+
       </fieldset>
       <button type="submit">Enviar Orden</button>
-      
 
     </form>
   </div>
